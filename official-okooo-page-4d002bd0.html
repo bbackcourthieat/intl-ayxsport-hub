@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳客 · 数据指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fafaf9;
+            color: #1c1c1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.4rem 1.2rem 4rem;
+        }
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
+        /* hero section - 窄幅、去装饰 */
+        .hero {
+            margin-bottom: 3.6rem;
+            padding-top: 1.2rem;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #222;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b6b68;
+            border-left: 3px solid #c7c7c4;
+            padding-left: 0.9rem;
+            margin-top: 0.2rem;
+        }
+        /* 通用卡片式条目 — 无边框，极简间距 */
+        .brief-block {
+            margin-bottom: 2.8rem;
+        }
+        .brief-block h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #2e2e2b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #e4e4e1;
+        }
+        .brief-block p, .brief-block li {
+            font-size: 1rem;
+            color: #3a3a37;
+            margin-bottom: 0.9rem;
+        }
+        .brief-block ul {
+            list-style: none;
+            margin-top: 0.2rem;
+        }
+        .brief-block li {
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.65rem;
+        }
+        .brief-block li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #a8a8a4;
+        }
+        /* 链接样式：严肃、克制 */
+        a {
+            color: #1e3a5f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.1s;
+        }
+        a:hover {
+            color: #000;
+            text-decoration-color: #000;
+        }
+        /* 场景卡片——极简灰色背景块 */
+        .scenario-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+        .scenario-item {
+            background: #f2f2ef;
+            padding: 1.2rem 1.4rem;
+            border-radius: 0px;
+        }
+        .scenario-item strong {
+            font-weight: 500;
+            color: #1e1e1b;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+        .scenario-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        /* 提示区 / faq 摘要 */
+        .note-box {
+            background: #ffffff;
+            border: 1px solid #e0dfdc;
+            padding: 1.4rem 1.6rem;
+            margin: 2.2rem 0 1.8rem;
+        }
+        .note-box h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #6b6b68;
+            margin-bottom: 0.9rem;
+        }
+        .note-box p {
+            font-size: 0.95rem;
+            color: #3f3f3c;
+            margin-bottom: 0.7rem;
+        }
+        .note-box p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-item {
+            margin: 1.2rem 0;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #2c2c29;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #555;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e4e4e1;
+            margin: 2.2rem 0 1.6rem;
+        }
+        .footnote {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: left;
+            border-top: 0;
+            padding-top: 1rem;
+        }
+        /* 响应式 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.6rem 0.9rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .scenario-item {
+                padding: 1rem 1rem;
+            }
+            .note-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- hero：标题 + 简明定位 -->
+    <div class="hero">
+        <h1>澳客 · 数据指引</h1>
+        <div class="sub">基于赛事数据与统计信息的决策参考平台</div>
+    </div>
+
+    <!-- 摘要：什么 & 为什么 -->
+    <div class="brief-block">
+        <h2>概要</h2>
+        <p><a href="https://official-okooo.com">澳客</a> 是一个聚焦体育赛事数据整合与分析的工具型站点。不同于泛资讯类体育门户，其核心逻辑是将结构化数据（赔率、走势、交锋记录）以清晰面板呈现，辅助使用者形成独立判断。平台不对赛果做任何保证，仅提供可追溯的公开信息层。</p>
+        <p>从使用场景看，澳客更适合已经具备基本赛事认知、需要提高信息检索效率的人群，而非寻求「推荐」或「速成结论」的浏览者。</p>
+    </div>
+
+    <!-- 亮点：四个特征，简洁陈述 -->
+    <div class="brief-block">
+        <h2>特征</h2>
+        <ul>
+            <li><strong>数据密度优先：</strong> 页面在有限空间内展示历史交锋、近期战绩、概率变动等字段，减少跳转次数。</li>
+            <li><strong>维度对照：</strong> 同一场比赛支持切换欧洲、亚洲、大小球等不同视角，方便横向比较。</li>
+            <li><strong>走势可视化：</strong> 关键指标（如凯利指数、盘口变化）以折线或柱状图呈现，降低数字阅读疲劳。</li>
+            <li><strong>无冗余社交模块：</strong> 不设评论区、推荐流或用户生成内容，保持界面纯粹。</li>
+        </ul>
+    </div>
+
+    <!-- 使用建议场景卡片（替代表格） -->
+    <div class="brief-block">
+        <h2>适用场景示例</h2>
+        <div class="scenario-grid">
+            <div class="scenario-item">
+                <strong>赛前快速浏览</strong> – 同时关注多场联赛，通过 澳客 的列表模式一次性查看基础数据，无需逐一点击。
+            </div>
+            <div class="scenario-item">
+                <strong>历史对照</strong> – 查阅两支球队近五场同主客数据，对比得失球与盘口表现，辅助个人分析。
+            </div>
+            <div class="scenario-item">
+                <strong>异常波动识别</strong> – 观察临场赔率或指数变化幅度，结合自身经验判断是否存在信息偏差。
+            </div>
+        </div>
+        <p style="margin-top: 0.2rem; font-size: 0.95rem; color: #5a5a57;">上述场景均基于信息整合，不构成任何行动建议。</p>
+    </div>
+
+    <!-- 访问说明 & 克制的提醒（FAQ 摘要形式） -->
+    <div class="note-box">
+        <h3>访问提示</h3>
+        <p><span style="font-weight: 500;">可用性：</span> 平台采用常规 Web 技术，主流浏览器均可直接访问。部分图表依赖 JavaScript 渲染，建议保持脚本启用状态。</p>
+        <p><span style="font-weight: 500;">数据延迟：</span> 澳客 所展示的赔率及指数来源于公开渠道，可能存在数分钟延迟，不适用于超短线实时决策。</p>
+        <div class="faq-item">
+            <div class="faq-q">是否需要注册？</div>
+            <div class="faq-a">浏览基础数据无需账号。部分高级筛选或历史查询功能可能需要简易注册，平台不强制收集个人信息。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">数据准确性如何？</div>
+            <div class="faq-a">平台提供的数据均标注来源及更新时间。使用者应将其视为参考维度之一，而非唯一依据。任何竞技项目均存在不确定性。</div>
+        </div>
+    </div>
+
+    <!-- 一句克制收尾 + 再次链接（自然嵌入） -->
+    <hr>
+    <p style="font-size: 0.95rem; color: #3e3e3b; margin-bottom: 0.6rem;">
+        如果你希望从数据层面重新梳理对赛事的理解，可以尝试将 <a href="https://official-okooo.com">澳客</a> 纳入你的信息检查清单。
+    </p>
+    <p style="font-size: 0.9rem; color: #7a7a76;">
+        注意：任何数据工具都无法消除不确定性。请基于完整信息、理性判断并遵守当地法律法规。
+    </p>
+    <div class="footnote">
+        页面所提及内容仅供信息参考，不构成任何形式的指引。<br>
+        数据服务由 official-okooo.com 提供。
+    </div>
+</div>
+</body>
+</html>
